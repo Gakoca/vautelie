@@ -1,0 +1,297 @@
+/* =============================================
+   VAUTELIÊ — Estética: Gótico + Circo Antigo
+   Logo menor ao lado do título
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Allegreya+SC:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /* Paleta — Gótico + Circo Dramático */
+    --preto-profundo: #050505;
+    --preto-circo: #120b0e;
+    --vermelho-sangue: #9E1A1A;
+    --vermelho-fogo: #D62828;
+    --vinho-profundo: #4A0F22;
+    --roxo-meia-noite: #240B36;
+    --dourado-rei: #E6C200;
+    --dourado-envelhecido: #B79210;
+    --prata-sombria: #C0C0C0;
+    --creme-antigo: #F2E9D8;
+    --sombra-vermelha: rgba(158, 26, 26, 0.45);
+    --sombra-dourada: rgba(230, 194, 0, 0.35);
+    --borda-branca: rgba(242, 233, 216, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--preto-profundo);
+    color: var(--creme-antigo);
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    background-image: 
+        radial-gradient(circle at top left, rgba(74, 15, 34, 0.4), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(36, 11, 54, 0.5), transparent 55%),
+        linear-gradient(180deg, #050505, #120b0e);
+    background-attachment: fixed;
+}
+
+/* =============================================
+   CABEÇALHO — Logo ao lado do título
+   ============================================= */
+header {
+    background: linear-gradient(180deg, rgba(36,11,54,0.7), rgba(158,26,26,0.35), transparent);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--dourado-rei), var(--vermelho-fogo), var(--dourado-rei), transparent) 1;
+}
+
+/* Logo + Título lado a lado */
+.logo-conjunto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre logo e o texto */
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+/* Logo imagem — reduzida */
+.logo-imagem {
+    flex-shrink: 0;
+}
+
+.logo-imagem img {
+    max-width: 90px; /* ✅ Logo menor */
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 12px var(--dourado-rei));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.logo-imagem img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 20px var(--vermelho-fogo)) drop-shadow(0 0 30px var(--dourado-rei));
+}
+
+/* Texto da marca — ao lado da logo */
+.logo-texto {
+    font-family: "CCPassThePort Regular", sans-serif;
+    font-size: clamp(28px, 5vw, 46px);
+    color: var(--dourado-rei);
+    letter-spacing: 5px;
+    text-align: center;
+    white-space: nowrap;
+    animation: brilhoCirco 3s ease-in-out infinite alternate;
+}
+
+@keyframes brilhoCirco {
+    0%   { filter: drop-shadow(0 0 10px var(--vermelho-sangue)) drop-shadow(0 0 20px var(--vinho-profundo)); }
+    100% { filter: drop-shadow(0 0 15px var(--dourado-rei)) drop-shadow(0 0 30px var(--dourado-envelhecido)); }
+}
+
+/* Navegação */
+nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav a {
+    font-family: 'Alegreya SC', serif;
+    color: var(--creme-antigo);
+    font-size: 20px;
+    margin: 0 18px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: var(--dourado-rei);
+    border-color: var(--vermelho-fogo);
+    background: rgba(158, 26, 26, 0.12);
+    box-shadow: inset 0 0 14px var(--sombra-vermelha);
+}
+
+/* =============================================
+   SEÇÕES
+   ============================================= */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 35px;
+    background: linear-gradient(135deg, rgba(26,20,24,0.9), rgba(36,11,54,0.2));
+    border-radius: 4px;
+    border: 2px solid var(--dourado-envelhecido);
+    box-shadow: 
+        inset 0 0 0 1px var(--borda-branca),
+        0 0 30px rgba(158,26,26,0.12), 
+        inset 0 0 50px rgba(0,0,0,0.6);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+section.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-family: 'Alegreya SC', serif;
+    font-size: 36px;
+    color: var(--vermelho-fogo);
+    border-bottom: 2px solid var(--dourado-rei);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+}
+
+h3 {
+    font-family: 'Alegreya SC', serif;
+    font-size: 24px;
+    color: var(--dourado-rei);
+    margin: 30px 0 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #E8DFCC;
+}
+
+/* =============================================
+   EQUIPE — Fotos e nomes
+   ============================================= */
+.grade-equipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.cartao-membro {
+    background: linear-gradient(180deg, #1f181c, #2c1642);
+    border: 2px solid var(--vermelho-sangue);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.cartao-membro:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--dourado-rei);
+    box-shadow: 0 0 25px var(--sombra-dourada), 0 0 40px var(--sombra-vermelha);
+}
+
+.cartao-membro img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--vermelho-sangue);
+    margin-bottom: 15px;
+    box-shadow: 0 0 0 4px var(--dourado-envelhecido);
+}
+
+.cartao-membro h4 {
+    font-family: 'Alegreya SC', serif;
+    font-size: 22px;
+    color: var(--dourado-rei);
+    margin-bottom: 5px;
+}
+
+.cartao-membro .funcao {
+    color: var(--vermelho-fogo);
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+/* =============================================
+   PORTFÓLIO — 6 Decorações + 6 Fantasias
+   ============================================= */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.cartao {
+    background: linear-gradient(180deg, #1a1418, #2e1b47);
+    border-radius: 4px;
+    border: 2px solid var(--vinho-profundo);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao:hover {
+    transform: scale(1.04);
+    border-color: var(--dourado-rei);
+    box-shadow: 0 0 20px var(--sombra-dourada), 0 0 35px var(--sombra-vermelha);
+}
+
+.cartao img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.cartao p {
+    padding: 14px;
+    text-align: center;
+    color: var(--creme-antigo);
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(180deg, transparent, rgba(36,11,54,0.4));
+    border-top: 1px solid var(--borda-branca);
+}
+
+/* =============================================
+   CONTATO
+   ============================================= */
+.redes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.redes a {
+    color: var(--dourado-rei);
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: all 0.3s;
+}
+
+.redes a:hover {
+    color: var(--vermelho-fogo);
+    border-bottom-color: var(--vermelho-fogo);
+}
+
+/* =============================================
+   RODAPÉ
+   ============================================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid;
+    border-image: linear-gradient(90deg, transparent, var(--vermelho-sangue), var(--dourado-rei), transparent) 1;
+    margin-top: 40px;
+    color: #776b70;
+    font-size: 14px;
+}
