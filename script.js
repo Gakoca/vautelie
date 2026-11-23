@@ -416,3 +416,19 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCatalogo();
     atualizarInterfaceCarrinho();
 });
+
+// =========================================================
+// VISUALIZADOR DO MIV (MANUAL DE IDENTIDADE VISUAL)
+// =========================================================
+function abrirImagemMiv(caminhoImagem, titulo) {
+    corpoModal.innerHTML = `
+        <div style="text-align: center;">
+            <span style="color: var(--dourado); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;">Manual de Identidade Visual</span>
+            <h3 style="font-family: var(--fonte-titulo); color: var(--texto-claro); margin: 8px 0 16px;">${titulo}</h3>
+            <img src="${caminhoImagem}" alt="${titulo}" 
+                 style="width: 100%; max-height: 70vh; object-fit: contain; border-radius: 10px; border: 1px solid var(--borda-sutil);"
+                 onerror="this.src='https://placehold.co/800x500/20192e/d4af37?text=${encodeURIComponent(titulo)}'">
+        </div>
+    `;
+    modalGeral.classList.remove('oculto');
+}
