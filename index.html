@@ -24,6 +24,7 @@
         <nav>
             <a href="#quem-somos">Quem Somos</a>
             <a href="#proposta">Nossa Proposta</a>
+            <a href="#miv">Identidade Visual</a>
             <a href="#equipe">Equipe</a>
             <a href="#catalogo">Catálogo & Loja</a>
             <a href="#contato">Contato</a>
@@ -43,16 +44,49 @@
         </div>
     </div>
 
-    <!-- SEÇÃO DE VÍDEO INSTITUCIONAL -->
+    <!-- SEÇÃO DE VÍDEOS INSTITUCIONAIS (LADO A LADO) -->
     <section id="video-empresa" class="secao-animada">
         <h2>Nosso Universo em Movimento</h2>
         <p class="subtitulo-secao">Assista aos bastidores das nossas produções, cenografias e figurinos exclusivos.</p>
         
-        <div class="moldura-video">
-            <video controls poster="imagens/banner1.jpg" preload="metadata">
-                <source src="videos/apresentacao.mp4" type="video/mp4">
-                Seu navegador não suporta a reprodução de vídeos.
-            </video>
+        <div class="grade-videos">
+            <!-- Vídeo 1 -->
+            <div class="card-video">
+                <div class="moldura-video">
+                    <video controls poster="imagens/banner1.jpg" preload="metadata">
+                        <source src="videos/apresentacao.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                </div>
+                <h4>Conheça Nossa Empresa!</h4>
+            </div>
+
+            <!-- Vídeo 2 -->
+            <div class="card-video">
+                <div class="moldura-video">
+                    <video controls poster="imagens/banner2.jpg" preload="metadata">
+                        <source src="videos/video60.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                </div>
+                <h4>Nosso Ateliê</h4>
+            </div>
+        </div>
+    </section>
+
+   <!-- SEÇÃO — MIV (Manual de Identidade Visual Contínuo) -->
+    <section id="miv" class="secao-animada">
+        <h2>Identidade Visual (MIV)</h2>
+        <p class="subtitulo-secao">Painel contínuo do manual da Vauteliê criado no Illustrator. Clique em qualquer parte para ampliar.</p>
+
+        <div class="painel-miv-continuo">
+            <img src="imagens/miv-01.jpg" alt="MIV Vauteliê - Parte 1" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 1')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+01'">
+            <img src="imagens/miv-02.jpg" alt="MIV Vauteliê - Parte 2" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 2')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+02'">
+            <img src="imagens/miv-03.jpg" alt="MIV Vauteliê - Parte 3" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 3')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+03'">
+            <img src="imagens/miv-04.jpg" alt="MIV Vauteliê - Parte 4" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 4')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+04'">
+            <img src="imagens/miv-05.jpg" alt="MIV Vauteliê - Parte 5" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 5')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+05'">
+            <img src="imagens/miv-06.jpg" alt="MIV Vauteliê - Parte 6" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 6')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+06'">
+            <img src="imagens/miv-07.jpg" alt="MIV Vauteliê - Parte 7" onclick="abrirImagemMiv(this.src, 'MIV Vauteliê — Parte 7')" onerror="this.src='https://placehold.co/600x450/20192e/d4af37?text=MIV+07'">
         </div>
     </section>
 
